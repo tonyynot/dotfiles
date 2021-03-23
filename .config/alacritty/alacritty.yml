@@ -1,4 +1,4 @@
-# Colors (One Darker)
+#Colors (One Darker)
 colors:
   # Default colors
   primary:
@@ -27,10 +27,26 @@ colors:
     magenta: "#C586C0"
     cyan: "#29B8DB"
     white: "#ECEFF4"
-  background_opacity: 0.6
-    
+  # background_opacity: 1.0
 
 font:
+  # The normal (roman) font face to use.
+  normal:
+    family: Hack
+    # Style can be specified to pick a specific face.
+    style: Regular
+
+  # The bold font face
+  bold:
+    family: Hack
+    # Style can be specified to pick a specific face.
+    # style: Bold
+
+  # The italic font face
+  italic:
+    family: Hack
+    # Style can be specified to pick a specific face.
+    # style: Italic
   size: 15.0
 
   offset:

@@ -41,7 +41,4 @@ pacsearch () {
 # alias ls='ls --color=auto'
 # PS1='[\u@\h \W]\$ '
 
-## Set default shell to ZSH
-exec zsh
-
 neofetch

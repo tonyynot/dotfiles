@@ -1,2 +1,7 @@
 pulseaudio --start
+xset s off
+xset -dpms
+xset s noblank
 
+#faster key repeat and delay
+xset r rate 210 40

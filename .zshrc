@@ -1,4 +1,4 @@
-##### Tony's Cool Zoomer Shell config  ######
+###### Tony's Cool Zoomer Shell config  ######
 #
 #
 #       ̿̿ ̿'̿'\̵͇̿̿\з= ( ▀ ͜͞ʖ▀) =ε/̵͇̿̿/’̿’̿ ̿ ̿̿ ̿̿ ̿̿
@@ -7,6 +7,7 @@
 #
 #############################################
 
+picom --xrender-sync-fence &
 neofetch
 
 HISTFILE=~/.histfile
@@ -63,4 +64,5 @@ alias crypto='curl rate.sx'
 alias btc='curl rate.sx/btc'
 alias eth='curl rate.sx/eth'
 
+alias todo='v todo.txt'
 

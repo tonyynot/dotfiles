@@ -35,17 +35,17 @@ gaps inner $inner_gaps
 gaps outer $outer_gaps
 
 # #---Basic Bindings---# #
-bindsym $mod+Return 		         exec $term
-bindsym $mod+Shift+Return	       exec $term --working-directory  $(xcwd)
+bindsym $mod+Return                 exec $term
+bindsym $mod+Shift+Return	        exec $term --working-directory  $(xcwd)
 
-bindsym $mod+Escape	             exec --no-startup-id dm-tool switch-to-greeter
-bindsym $mod+Shift+Escape	       exec --no-startup-id $hibernate
+bindsym $mod+Escape	                exec --no-startup-id dm-tool switch-to-greeter
+bindsym $mod+Shift+Escape	        exec --no-startup-id $hibernate
 
 # bindsym $mod+BackSpace
-# bindsym $mod+Shift+BackSpace	   exec --no-startup-id prompt "Reboot computer?" $reboot
+# bindsym $mod+Shift+BackSpace	    exec --no-startup-id prompt "Reboot computer?" $reboot
 
 # space
-bindsym $mod+space 			            exec --no-startup-id rofi-menu 
+bindsym $mod+space 			        exec --no-startup-id rofi-menu 
 
 
 # #---Letter Key Bindings---# #
@@ -69,59 +69,59 @@ bindsym $mod+Shift+r		        exec --no-startup-id winresize
 
 # t
 bindsym $mod+t 			            exec $term -e ytop
-bindsym $mod+Shift+t            focus mode_toggle
+bindsym $mod+Shift+t                focus mode_toggle
 
 # y
 bindsym $mod+y			            exec --no-startup-id flameshot gui -p ~/Pics/screenshots
 bindsym $mod+Shift+y		        exec --no-startup-id flameshot full -p ~/Pics/screenshots
 
 # u
-bindsym $mod+u                  [urgent=latest] focus
+bindsym $mod+u                      [urgent=latest] focus
 
 # i
-bindsym $mod+i                  fullscreen disable; floating enable; resize set 300 200; sticky enable; move position 4792 53
+bindsym $mod+i                      fullscreen disable; floating enable; resize set 300 200; sticky enable; move position 4792 53
 
 # o
 bindsym $mod+o			            exec --no-startup-id $term -e nvim ~/Repos/blog/content
 # bindsym $mod+Shift			        exec --no-startup-id $term -e nvim ~/Repos
 
 # a
-bindsym $mod+a		              exec $term -e alsamixer
+bindsym $mod+a		                exec $term -e alsamixer
 
 # s
 bindsym $mod+s        			    sticky toggle;
-bindsym $mod+Shift+s			      split toggle
+bindsym $mod+Shift+s			    split toggle
 
 # d
-bindsym $mod+d                  exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -b -i'
+bindsym $mod+d                      exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -b -i'
 
 # f
 bindsym $mod+f			            fullscreen toggle
-bindsym $mod+Shift+f 	          floating toggle
+bindsym $mod+Shift+f 	            floating toggle
 
 # g
-bindsym $mod+g		              gaps inner current set $inner_gaps; gaps outer current set $outer_gaps
-bindsym $mod+Shift+g		        gaps inner current set 0; gaps outer current set 0
+bindsym $mod+g		                gaps inner current plus 5
+bindsym $mod+Shift+g		        gaps inner current minus 5
 
 # h
 bindsym $mod+h			            focus left
 bindsym $mod+Shift+h		        move left 30
-bindsym $mod+Ctrl+h		          move workspace to output left
+bindsym $mod+Ctrl+h		            move workspace to output left
 
 # j
 bindsym $mod+j			            focus down
 bindsym $mod+Shift+j		        move down 30
-bindsym $mod+Ctrl+j		          move workspace to output down
+bindsym $mod+Ctrl+j		            move workspace to output down
 
 # k
 bindsym $mod+k			            focus up
 bindsym $mod+Shift+k		        move up 30
-bindsym $mod+Ctrl+k		          move workspace to output up
+bindsym $mod+Ctrl+k		            move workspace to output up
 
 # l
 bindsym $mod+l			            focus right
 bindsym $mod+Shift+l		        move right 30
-bindsym $mod+Ctrl+l		          move workspace to output right
+bindsym $mod+Ctrl+l		            move workspace to output right
 
 bindsym $mod+semicolon 			    exec --no-startup-id skippy-xd
 
@@ -152,11 +152,11 @@ bindsym $mod+Shift+m		        exec --no-startup-id discord
 
 # #---Workspace Bindings---# #
 bindsym $mod+Tab		            exec --no-startup-id rofi-menu-windows
-bindsym $mod+Shift+Tab		      workspace next
-bindsym $mod+apostrophe		      split horizontal ;; exec $term
-bindsym $mod+slash		          split vertical ;; exec $term
-bindsym $mod+Shift+slash	      kill
-bindsym $mod+backslash		      workspace back_and_forth
+bindsym $mod+Shift+Tab		        workspace next
+bindsym $mod+apostrophe		        split horizontal ;; exec $term
+bindsym $mod+slash		            split vertical ;; exec $term
+bindsym $mod+Shift+slash	        kill
+bindsym $mod+backslash		        workspace back_and_forth
 
 set $ws1 "1"
 set $ws2 "2"
@@ -173,8 +173,7 @@ set $ws10 "10"
 assign [class="Brave"] $ws1
 assign [class="Telegram"] $ws4
 assign [class="discord"] $ws4
-for_window [class="Spotify"] move to workspace $ws9
-assign [class="obs"] $ws10
+assign [class="keepassxc" $ws5
 
 # Assing autofloat
 for_window [title=".*Emulator.*"] floating enable
@@ -204,8 +203,6 @@ bindsym $mod+Shift+8	move container to workspace $ws8
 bindsym $mod+Shift+9	move container to workspace $ws9
 bindsym $mod+Shift+0	move container to workspace $ws10
 
-for_window [title="GIMP Startup"] move workspace $ws5
-for_window [class="Gimp"] move workspace $ws5
 for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 for_window [window_role="GtkFileChooserDialog"] move position center
 
@@ -213,21 +210,21 @@ for_window [window_role="GtkFileChooserDialog"] move position center
 # #---Function Buttons---# #
 bindsym $mod+F1		        restart
 bindsym $mod+F2		        exec --no-startup-id screenkey -s small --scr 1 -p fixed -g 600x100+2573+1330 --opacity .9 --font-color white
-bindsym $mod+F3	          exec --no-startup-id killall screenkey
+bindsym $mod+F3	            exec --no-startup-id killall screenkey
 bindsym $mod+F12	        exec $term -e nmtui
 
 # #---Arrow Keys---# #
-bindsym $mod+Left		      focus left
-bindsym $mod+Shift+Left   resize shrink width 5 px or 5 ppt
+bindsym $mod+Left		    focus left
+bindsym $mod+Shift+Left     resize shrink width 5 px or 5 ppt
 bindsym $mod+Ctrl+Left		move workspace to output right
-bindsym $mod+Down		      focus down
-bindsym $mod+Shift+Down   resize shrink height 5 px or 5 ppt
+bindsym $mod+Down		    focus down
+bindsym $mod+Shift+Down     resize shrink height 5 px or 5 ppt
 bindsym $mod+Ctrl+Down		move workspace to output up
-bindsym $mod+Up			      focus up
-bindsym $mod+Shift+Up     resize grow height 5 px or 5 ppt
-bindsym $mod+Ctrl+Up		  move workspace to output down
+bindsym $mod+Up			    focus up
+bindsym $mod+Shift+Up       resize grow height 5 px or 5 ppt
+bindsym $mod+Ctrl+Up		move workspace to output down
 bindsym $mod+Right 		    focus right
-bindsym $mod+Shift+Right  resize grow width 5 px or 5 ppt
+bindsym $mod+Shift+Right    resize grow width 5 px or 5 ppt
 bindsym $mod+Ctrl+Right		move workspace to output left
 
 # Pulse Audio controls

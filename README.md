@@ -1,13 +1,13 @@
 
-
+```
 ██████╗  ██████╗ ████████╗███████╗██╗██╗     ███████╗███████╗
 ██╔══██╗██╔═══██╗╚══██╔══╝██╔════╝██║██║     ██╔════╝██╔════╝
 ██║  ██║██║   ██║   ██║   █████╗  ██║██║     █████╗  ███████╗
 ██║  ██║██║   ██║   ██║   ██╔══╝  ██║██║     ██╔══╝  ╚════██║
 ██████╔╝╚██████╔╝   ██║   ██║     ██║███████╗███████╗███████║
 ╚═════╝  ╚═════╝    ╚═╝   ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝
-
-### MY ARCH LINUX DOTFILES
+```
+### ==== MY ARCH LINUX CONFIG ====
 
 
 NOTE: These dotfiles and the bootstrap script are for my own personal Arch configuration. Please check everything first before installing. Otherwise feel free to take what you need and enjoy!

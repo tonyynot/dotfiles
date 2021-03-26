@@ -7,7 +7,6 @@
 #
 #############################################
 
-picom --xrender-sync-fence &
 neofetch
 
 HISTFILE=~/.histfile
@@ -46,6 +45,9 @@ alias pu='sudo pacman -Syu'
 	
 ## Git ##
 alias gp='git add . && git commit -m "auto push" && git push'
+alias dp='dotfiles add . && dotfiles commit -m "auto push" && dotfiles push'
+alias ds='dotfiles status'
+alias gs='git status'
 
 ## i3 ##
 alias i3-config='v ~/.config/i3/config'
@@ -54,7 +56,7 @@ alias i3-reload='i3-msg reload'
 
 ## System ##
 alias monitors='xrandr -q | grep " connected" | cut -d ' ' -f1'
-alias vpn='protonvpn c -f'
+alias vpn='sudo protonvpn c -f'
 
 ## Curls ##
 alias weather='curl http://wttr.in/allentown'

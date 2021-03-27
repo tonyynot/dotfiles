@@ -32,7 +32,7 @@ prompt spaceship
 ## dotfiles ##
 alias v='sudo -E vim'
 alias zshconfig='v ~/.zshrc'
-alias bootstrap='v ~/repos/arch-bootstrap/package-installer.sh'
+alias bootstrap='v ~/.config/bootstrap.sh'
 alias termconfig='v ~/.config/alacritty/alacritty.yml'
 alias zsource='source ~/.zshrc'
 alias vimconfig='v ~/.vimrc'

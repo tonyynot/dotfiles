@@ -7,6 +7,7 @@
 #
 #############################################
 
+#ufetch
 neofetch
 
 HISTFILE=~/.histfile

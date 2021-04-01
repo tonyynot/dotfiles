@@ -28,6 +28,7 @@ sudo pacman -S neofetch --noconfirm
 sudo pacman -S picom --noconfirm:
 sudo pacman -S lxappearance --noconfirm
 sudo pacman -S flameshot --noconfirm
+sudo pacman -S imagemagick --noconfirm
 
 ## Productivity
 sudo pacman -S libreoffice-still --noconfirm
@@ -59,8 +60,8 @@ git clone https://git.suckless.org/dmenu && cd dmenu && sudo make clean install 
 sudo pacman -S ranger --noconfirm
 sudo pacman -S pcmanfm --noconfirm
 
-## X utilitieal
-sudo pacman -S xorg-xset xorg-xrandr --noconfirm
+## X utilities
+sudo pacman -S xorg-xset xorg-xrandr xorg-xpdyinfo --noconfirm 
 
 ## Security / Privacy
 sudo pacman -S keepassxc --noconfirm
@@ -81,6 +82,7 @@ sudo pacman -S i3wm i3-gaps i3blocks i3status i3lock --noconfirm
 yay -S autotiling
 yay -S skippy-xd-git
 sudo pacman -S feh --noconfirm
+yay -S betterlockscreen && betterlockscreen -u ~/Pictures/Wallpaper
 
 echo "Installing dotfiles for you based configs, sir."
 
@@ -117,5 +119,3 @@ echo '
 　| |　　) /
 ノ )　　Lﾉ
 (_／'
-
-

@@ -25,7 +25,7 @@ set $alt Mod1
 set $shutdown sudo -A shutdown -h now
 set $reboot sudo -A reboot
 set $lock i3lock
-set $suspend sudo systemctl suspend
+set $suspend sudo systemctl enable betterlockscreen@$USER
 set $hibernate sudo -A systemctl hibernate
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -132,14 +132,14 @@ bindsym $mod+z			            exec --no-startup-id $term -e nvim ~/.zshrc
 
 # x
 bindsym $mod+x 			            exec --no-startup-id "Reboot computer?" "$reboot"
-bindsym $mod+Shift+x		        exec --no-startup-id "Shutdown computer?" "$shutdown"
+bindsym $mod+shift+x                exec betterlockscreen -l pixel
 
 # p
 bindsym $mod+p			            exec --no-startup-id picom -b
 bindsym $mod+Shift+p		        exec --no-startup-id killall picom
 
 # v
-bindsym $mod+v			            exec --no-startup-id mpv /dev/video0
+bindsym $mod+v			            exec --no-startup-id projectM-pulseaudio
 
 # b
 bindsym $mod+b			            exec --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpaper/*

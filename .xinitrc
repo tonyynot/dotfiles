@@ -11,10 +11,11 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 
 SESSION=${1:-xfce}
 
+# Set random wallpaper and lockscreen
 feh --bg-max --randomize ~/Pictures/Wallpaper/* &
+exec --no-startup-id betterlockscreen -w dim
 
 # merge in defaults and keymaps
-
 if [ -f $sysresources ]; then
     xrdb -merge $sysresources
 fi
@@ -32,7 +33,6 @@ if [ -f "$usermodmap" ]; then
 fi
 
 # start some nice programs
-
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
         [ -x "$f" ] && . "$f"

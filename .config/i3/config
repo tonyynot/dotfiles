@@ -1,4 +1,6 @@
 # vim: filetype=i1config
+#
+#
 
 # This config file will use environment variables such as $BROWSER and $TERMINAL.
 
@@ -10,7 +12,7 @@ bar {
     }
 
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf -b
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpaper/*
 

@@ -19,6 +19,7 @@ bindkey -v
 zstyle :compinstall filename '/home/tsar/.zshrc'
 autoload -Uz compinit
 compinit
+
 # End of lines added by compinstall
 #
 # Prompt ZSH

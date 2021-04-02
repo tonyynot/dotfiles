@@ -10,8 +10,8 @@ echo '༼ つ ͡° ͜ʖ ͡° ༽つ System update complete. Now installing your 
 ## Developer tools
 sudo pacman -S --needed git base-devel --noconfirm
 sudo pacman -S vim --noconfirm
-git clone https://aur.archlinux.org/spaceship-prompt-git.git --depth=1
-cd spaceship-prompt-git &&  makepkg -si && cd .. && rm -Rf spaceship-prompt-git
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+sudo vim +PluginInstall +qall
 
 ## Fonts
 sudo pacman -S noto-fonts --noconfirm
@@ -33,23 +33,24 @@ sudo pacman -S imagemagick --noconfirm
 ## Productivity
 sudo pacman -S libreoffice-still --noconfirm
 sudo pacman -S thunderbird --noconfirm
-sudo pacman -S virtualbox --noconfirm
+sudo pacman -S virtualbox linux59-virtualbox-guest-modules linux59-virtualbox-host-modules virtualbox-guest-utils virtualbox-guest-dkms virtualbox-host-dkms --noconfirm
 
 ## Terminal Emulator with ZSH
 sudo pacman -S alacritty --noconfirm
 sudo pacman -S zsh zsh-completions --noconfirm
-git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1 && cd spaceship-prompt && makepkg -si && cd .. && rm -Rf spaceship-prompt-git
 
 ## yay package installer (Arch User Repo)
-git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm && cd ..
+git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm && cd .. && rm -Rf yay
 
 ## Browser install
 yay -S brave-bin
+suo pacman -S firefox
 
 ## Multimedia
 sudo pacman -S vlc --noconfirm
 sudo pacman -S pulseaudio --noconfirm
-sudo pacman -S projectm --noconfirm
+sudo pacman -S projectm-pulseaudio --noconfirm
 sudo pacman -S qbittorrent --noconfirm
 sudo pacman -S mpd mpc ncmpcpp --noconfirm
 
@@ -76,9 +77,12 @@ sudo pacman -S telegram --noconfirm
 sudo pacman -S nicotine+ --noconfirm
 yay -S telegram-desktop-bin --noconfirm #This still has confirmation. Look into yay noconfirm tags
 
+## Install the Bible
+git clone https://github.com/lukesmithxyz/kjv.git && cd kjv && sudo make install && cd .. && rm -Rf kjv
+
 ## i3WM Config
 ## *Imports custom config files from dotfiles directory
-sudo pacman -S i3wm i3-gaps i3blocks i3status i3lock --noconfirm 
+sudo pacman -S i3-wm i3-gaps i3blocks i3status i3lock --noconfirm 
 yay -S autotiling
 yay -S skippy-xd-git
 sudo pacman -S feh --noconfirm

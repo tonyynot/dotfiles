@@ -27,7 +27,7 @@ set $alt Mod1
 set $shutdown sudo -A shutdown -h now
 set $reboot sudo -A reboot
 set $lock i3lock
-set $suspend sudo systemctl enable betterlockscreen@$USER
+set $suspend sudo systemctl enable betterlockscreen@tsar
 set $hibernate sudo -A systemctl hibernate
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -72,7 +72,7 @@ bindsym $mod+r 			            exec $term -e ranger
 bindsym $mod+Shift+r		        exec --no-startup-id winresize
 
 # t
-bindsym $mod+t 			            exec $term -e ytop
+bindsym $mod+t 			            exec $term -e htop
 bindsym $mod+Shift+t                focus mode_toggle
 
 # y
@@ -81,6 +81,7 @@ bindsym $mod+Shift+y		        exec --no-startup-id flameshot full -p ~/Pictures/
 
 # u
 bindsym $mod+u                      [urgent=latest] focus
+bindsym $mod+Shift+u                exec --no-startup-id $term betterlockscreen -u ~/Pictures/Wallpaper/*
 
 # i
 bindsym $mod+i                      fullscreen disable; floating enable; resize set 300 200; sticky enable; move position 4792 53
@@ -130,11 +131,11 @@ bindsym $mod+Ctrl+l		            move workspace to output right
 bindsym $mod+semicolon 			    exec --no-startup-id skippy-xd
 
 # z
-bindsym $mod+z			            exec --no-startup-id $term -e nvim ~/.zshrc
+bindsym $mod+z			            exec --no-startup-id $term sudo vim ~/.zshrc
 
 # x
-bindsym $mod+x 			            exec --no-startup-id "Reboot computer?" "$reboot"
-bindsym $mod+shift+x                exec betterlockscreen -l pixel
+bindsym $mod+x 			            exec betterlockscreen -l pixel
+bindsym $mod+shift+x                exec betterlockscreen -s blur
 
 # p
 bindsym $mod+p			            exec --no-startup-id picom -b

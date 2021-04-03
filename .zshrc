@@ -55,6 +55,7 @@ alias gs='git status'
 alias i3-config='v ~/.config/i3/config'
 alias i3-logout='i3-msg exit'
 alias i3-reload='i3-msg reload'
+alias newlock='betterlockscreen -u ~/Pictures/Wallpaper/*'
 
 ## System ##
 alias monitors='xrandr -q | grep " connected" | cut -d ' ' -f1'
@@ -69,4 +70,3 @@ alias btc='curl rate.sx/btc'
 alias eth='curl rate.sx/eth'
 
 alias todo='v todo.txt'
-

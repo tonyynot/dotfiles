@@ -50,6 +50,12 @@ alias gp='git add . && git commit -m "auto push" && git push'
 alias dp='dotfiles add . && dotfiles commit -m "auto push" && dotfiles push'
 alias ds='dotfiles status'
 alias gs='git status'
+alias grm='git remote'
+alias gc='git clone'
+alias gac='git add . && git commit'
+alias gch='git checkout'
+alias gpom='git pull origin master'
+alias ga='git add'
 
 ## i3 ##
 alias i3-config='v ~/.config/i3/config'

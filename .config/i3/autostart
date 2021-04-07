@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# picom (window transparency)
+exec always --no-startup-id picom --config ~/.config/picom/picom.conf
+
+# autotiling 
+exec_always --no-startup-id autotiling
+
+# feh (background)
+exec_always --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpap
+      er/*

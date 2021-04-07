@@ -65,7 +65,8 @@ alias newlock='betterlockscreen -u ~/Pictures/Wallpaper/*'
 
 ## System ##
 alias monitors='xrandr -q | grep " connected" | cut -d ' ' -f1'
-alias vpn='sudo protonvpn c -f'
+alias vpnc='sudo protonvpn c -f'
+alias vpnd='sudo protonvpn d'
 
 ## Curls ##
 alias weather='curl http://wttr.in/allentown'

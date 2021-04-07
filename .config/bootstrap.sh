@@ -19,7 +19,8 @@ sudo pacman -S ttf-hack --noconfirm
 sudo pacman -s ttf-fira-code --noconfirm
 sudo pacman -S noto-fonts-emoji --noconfirm
 sudo pacman -S nerd-fonts-noto-sans-mono nerd-fonts-terminus nerd-fonts-roboto-mono --noconfirm
-sudo pacman -s ttf-font-awesome
+sudo pacman -s ttf-font-awesome --noconfirm
+sudo pacman -s papirus-icon-theme --noconfirm
 
 ## System tools
 sudo pacman -S gparted --noconfirim
@@ -70,6 +71,7 @@ sudo pacman -S nextcloud --noconfirm
 sudo pacman -S nextcloud-client --noconfirm
 sudo pacman -S openvpn --confirm
 yay -S proton-vpn-cli-git
+yay -S ledger-live
 
 ## Communication
 sudo pacman -S discord --noconfirm

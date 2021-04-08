@@ -14,7 +14,17 @@ font pango: Hack 15
 #   / _ \| | | | __/ _ \  \___ \| __/ _` | '__| __|
 #  / ___ \ |_| | || (_) |  ___) | || (_| | |  | |_ 
 # /_/   \_\__,_|\__\___/  |____/ \__\__,_|_|   \__|
-exec --no-startup-id sh ~/.config/i3/autostart
+#
+# picom (window transparency)
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
+# autotiling
+exec_always --no-startup-id autotiling
+
+# feh (background)
+exec_always --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpaper/*
+
+# mpd music player
+exec_always --no-startup-id mpd
 
 #  _  __            ____  _           _ 
 # | |/ /___ _   _  | __ )(_)_ __   __| |
@@ -41,32 +51,7 @@ set $term --no-startup-id alacritty
 set $alt Mod1
 set $shutdown sudo -A shutdown -h now
 set $reboot sudo -A reboot
-set $lock i3lock
 set $suspend sudo systemctl enable betterlockscreen@tsar
-set $hibernate sudo -A systemctl hibernate
-
-# _  _____ _     _            _        
-#(_)|____ | |   | |          | |       
-# _     / / |__ | | ___   ___| | _____ 
-#| |    \ \ '_ \| |/ _ \ / __| |/ / __|
-#| |.___/ / |_) | | (_) | (__|   <\__ \
-#|_|\____/|_.__/|_|\___/ \___|_|\_\___/
-#                                      
-
-bar {
- 	font pango:Source Sans Pro-12 12
-	status_command i3blocks 
-	position top
- colors {
-    separator #268bd2
-	background #282828
-    statusline #839496
-    focused_workspace #fdf6e3 #6c71c4 #fdf6e3
-    active_workspace #fdf6e3 #6c71c4 #fdf6e3
-    inactive_workspace #002b36 #586e75 #002b36
-    urgent_workspace #d33682 #d33682 #fdf6e3
-  }
-}
 
 # #---Gaps---# #
 for_window [class="^.*"] border pixel 2
@@ -87,6 +72,8 @@ bindsym $mod+Shift+space			floating toggle
 
 
 # #---Letter Key Bindings---# #
+
+# q 
 bindsym $mod+q			            [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 bindsym $mod+Shift+q		        [con_id="__focused__" instance="^(?!dropdown_).*$"] exec --no-startup-id kill -9 `xdotool getwindowfocus getwindowpid`
 
@@ -106,8 +93,8 @@ bindsym $mod+r 			            exec $term -e ranger
 bindsym $mod+Shift+r		        restart
 
 # t
-bindsym $mod+t 			            exec $term -e htop
-bindsym $mod+Shift+t                exec 
+bindsym $mod+t 			            split toggle
+bindsym $mod+Shift+t                exec $term htop
 
 # y
 bindsym $mod+y			            exec --no-startup-id flameshot gui
@@ -203,16 +190,17 @@ bindsym $mod+slash		            split vertical ;; exec $term
 bindsym $mod+Shift+slash	        kill
 bindsym $mod+backslash		        workspace back_and_forth
 
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+# workspace names / font-awesome
+set $ws1 "01 "
+set $ws2 "02 "
+set $ws3 "03 "
+set $ws4 "04 "
+set $ws5 "05 "
+set $ws6 "06 "
+set $ws7 "07 "
+set $ws8 "08 "
+set $ws9 "09 "
+set $ws0 "10 "
 
 # Assing autofloat
 for_window [title=".*Emulator.*"] floating enable
@@ -227,8 +215,7 @@ bindsym $mod+6		workspace $ws6
 bindsym $mod+7		workspace $ws7
 bindsym $mod+8		workspace $ws8
 bindsym $mod+9		workspace $ws9
-bindsym $mod+0		workspace $ws10
-
+bindsym $mod+0		workspace $ws0
 
 # move focused container to workspace
 bindsym $mod+Shift+1	move container to workspace $ws1
@@ -240,11 +227,10 @@ bindsym $mod+Shift+6	move container to workspace $ws6
 bindsym $mod+Shift+7	move container to workspace $ws7
 bindsym $mod+Shift+8	move container to workspace $ws8
 bindsym $mod+Shift+9	move container to workspace $ws9
-bindsym $mod+Shift+0	move container to workspace $ws10
+bindsym $mod+Shift+0	move container to workspace $ws0
 
 for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 for_window [window_role="GtkFileChooserDialog"] move position center
-
 
 # #---Function Buttons---# #
 bindsym $mod+F1		        restart
@@ -271,17 +257,51 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% #decrease sound volume
 bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
 
+# _____ _                         
+#|_   _| |                        
+#  | | | |__   ___ _ __ ___   ___ 
+#  | | | '_ \ / _ \ '_ ` _ \ / _ \
+#  | | | | | |  __/ | | | | |  __/
+#  \_/ |_| |_|\___|_| |_| |_|\___|
+                                 
+# set primary gruvbox colorscheme colors
+set $bg #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
 
-#  ____  _         _      
-# / ___|| |_ _   _| | ___ 
-# \___ \| __| | | | |/ _ \
-#  ___) | |_| |_| | |  __/
-# |____/ \__|\__, |_|\___|
-#            |___/        
+# font used by i3 for titles and bars
+font pango:Hack 10
 
-# title
+#start of bar section
+bar {
+    position top
+    status_command i3blocks
+    colors {
+        # bar background color
+        background $bg
+        # text color used for blocks that do not have a color specified.
+        statusline $yellow
+        # workspaces section            
+        #                    border  backgr. text
+        focused_workspace    $aqua $aqua $darkgray
+        inactive_workspace   $darkgray $darkgray $yellow
+        active_workspace     $darkgray $darkgray $yellow
+        urgent_workspace     $red $red $bg
+    }
+}
+#end of bar section
+
+#start of window title bars & borders section
+
+#title
 title_align center
-
+#
 # class                 border      background  text       indicator  child_border
 client.focused          #271f17aF   #271f17f5   #fffffF   #AAAAAA55   #FF6F5495
 client.focused_inactive #21211d55   #22222255   #888888   #484e5055   #ffffff15
@@ -289,8 +309,10 @@ client.unfocused        #33333355   #1d212155   #fffff1   #292d2e55   #22222255
 client.urgent           #4a4b4c55   #4a4b4c55   #fffffF   #AAAAAA55   #4a4c4b55
 client.placeholder      #00000055   #0c0c0c55   #fffffF   #00000055   #0c0c0c55
 client.background       #11111155
-
-# border
+#
+## border
 default_border          pixel 2
 default_floating_border pixel 3
 hide_edge_borders smart
+#
+#end of window title bars & borders section

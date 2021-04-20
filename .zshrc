@@ -26,7 +26,6 @@ compinit
 #autoload -U promptinit; promptinit
 #prompt spaceship
 
-
 autoload -U colors && colors	# Load colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 setopt autocd		# Automatically cd into typed directory.
@@ -52,16 +51,24 @@ alias pr='sudo pacman -Rs'
 alias pu='sudo pacman -Syu'
 	
 ## Git ##
-alias gp='git add . && git commit -m "auto push" && git push'
-alias dp='dotfiles add . && dotfiles commit -m "auto push" && dotfiles push'
-alias ds='dotfiles status'
 alias gs='git status'
 alias grm='git remote'
+alias gp='git add . && git commit -m "auto push" && git push'
 alias gc='git clone'
 alias gac='git add . && git commit'
 alias gch='git checkout'
 alias gpom='git pull origin master'
 alias ga='git add'
+
+## dotfiles git ##
+alias dp='dotfiles add . && dotfiles commit -m "auto push" && dotfiles push'
+alias da='dotfiles add'
+alias dc='dotfiles commit'
+alias dp='dotfiles push'
+alias ds='dotfiles status'
+
+## Term programs ##
+alias nb='newsboat'
 
 ## i3 ##
 alias i3-config='v ~/.config/i3/config'

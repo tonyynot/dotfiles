@@ -169,7 +169,7 @@ bindsym $mod+v			            exec --no-startup-id projectM-pulseaudio
 bindsym $mod+b			            exec --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpaper/*
 
 # n
-bindsym $mod+n		                exec $term -e htop
+bindsym $mod+n		                exec $term -e newsboat
 
 # m
 bindsym $mod+m		                exec --no-startup-id $term -e ncmpcpp

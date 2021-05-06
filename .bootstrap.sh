@@ -89,7 +89,7 @@ yay -S autotiling
 yay -S skippy-xd-git
 sudo pacman -S feh --noconfirm
 yay -S betterlockscreen && betterlockscreen -u ~/Pictures/Wallpaper
-
+sudo pacman -S rofi --noconfirm
 echo "Installing dotfiles for you based configs, sir."
 
 # This script will automatically install configs
@@ -102,7 +102,8 @@ dotfiles checkout
 if [ $? = 0 ]; then
 	echo "Checked out dotfiles.";
 	else
-	echo "Backing up pre-existing dot files.";
+	
+        echo "Backing up pre-existing dot files.";
 	dotfiles checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .dotfiles-backup/{}
 fi;
 dotfiles checkout

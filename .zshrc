@@ -38,7 +38,7 @@ setopt interactive_comments
 ## dotfiles ##
 alias v='sudo -E vim'
 alias zshconfig='v ~/.zshrc'
-alias bootstrap='v ~/.config/bootstrap.sh'
+alias bootstrap='v .bootstrap.sh'
 alias termconfig='v ~/.config/alacritty/alacritty.yml'
 alias zsource='source ~/.zshrc'
 alias vimconfig='v ~/.vimrc'
@@ -63,7 +63,7 @@ alias ga='git add'
 ## dotfiles git ##
 alias dp='dotfiles add . && dotfiles commit -m "auto push" && dotfiles push'
 alias da='dotfiles add'
-alias dc='dotfiles commit'
+alias dcm='dotfiles commit -m'
 alias dp='dotfiles push'
 alias ds='dotfiles status'
 

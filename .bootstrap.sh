@@ -84,9 +84,11 @@ git clone https://github.com/lukesmithxyz/kjv.git && cd kjv && sudo make install
 
 ## i3WM Config
 ## *Imports custom config files from dotfiles directory
-sudo pacman -S i3-wm i3-gaps i3blocks i3status i3lock --noconfirm 
+sudo pacman -S i3-wm i3-gaps i3status i3lock --noconfirm 
 yay -S autotiling
 yay -S skippy-xd-git
+yay -S i3blocks-git
+sudo git clone https://github.com/vivien/i3blocks-contrib ~/.config/i3blocks && cd !$ && cp config.example config && cd ~/
 sudo pacman -S feh --noconfirm
 yay -S betterlockscreen && betterlockscreen -u ~/Pictures/Wallpaper
 sudo pacman -S rofi --noconfirm

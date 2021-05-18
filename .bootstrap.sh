@@ -26,7 +26,7 @@ sudo pacman -s papirus-icon-theme --noconfirm
 sudo pacman -S gparted --noconfirim
 sudo pacman -S cmake --noconfirm
 sudo pacman -S neofetch --noconfirm
-sudo pacman -S picom --noconfirm:
+sudo pacman -S picom --noconfirm
 sudo pacman -S lxappearance --noconfirm
 sudo pacman -S flameshot --noconfirm
 sudo pacman -S imagemagick --noconfirm

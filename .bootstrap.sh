@@ -47,7 +47,7 @@ git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm
 
 ## Browser install
 yay -S brave-bin
-suo pacman -S firefox
+sudo pacman -S firefox
 
 ## Multimedia
 sudo pacman -S vlc --noconfirm
@@ -55,24 +55,25 @@ sudo pacman -S pulseaudio --noconfirm
 sudo pacman -S projectm-pulseaudio --noconfirm
 sudo pacman -S qbittorrent --noconfirm
 sudo pacman -S mpd mpc ncmpcpp --noconfirm
-sudo pacman -S soundux --noconfirm
+yay -S soundux
+sudo pacman -S youtube-dl --noconfirm
 
 ## Install Suckless software
-git clone https://git.suckless.org/dmenu && cd dmenu && sudo make clean install && cd ..
+#git clone https://git.suckless.org/dmenu && cd dmenu && sudo make clean install && cd ..
 
 ## File Navigation
 sudo pacman -S ranger --noconfirm
 sudo pacman -S pcmanfm --noconfirm
 
 ## X utilities
-sudo pacman -S xorg-xset xorg-xrandr xorg-xpdyinfo --noconfirm 
+#sudo pacman -S xorg-xset xorg-xrandr xorg-xpdyinfo --noconfirm 
 
 ## Security / Privacy
 sudo pacman -S keepassxc --noconfirm
 sudo pacman -S nextcloud --noconfirm
 sudo pacman -S nextcloud-client --noconfirm
 sudo pacman -S openvpn --confirm
-yay -S proton-vpn-cli-git
+yay -S protonvpn-cli-ng-git
 yay -S ledger-live
 
 ## Communication
@@ -91,6 +92,7 @@ sudo pacman -S i3-wm i3-gaps i3status i3lock --noconfirm
 yay -S autotiling
 yay -S skippy-xd-git
 yay -S i3blocks-git
+sudo pacman -S i3blocks --noconfirm
 sudo git clone https://github.com/vivien/i3blocks-contrib ~/.config/i3blocks && cd !$ && cp config.example config && cd ~/
 sudo pacman -S feh --noconfirm
 yay -S betterlockscreen && betterlockscreen -u ~/Pictures/Wallpaper

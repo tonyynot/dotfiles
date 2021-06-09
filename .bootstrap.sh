@@ -35,6 +35,7 @@ sudo pacman -S imagemagick --noconfirm
 sudo pacman -S libreoffice-still --noconfirm
 sudo pacman -S thunderbird --noconfirm
 sudo pacman -S virtualbox linux59-virtualbox-guest-modules linux59-virtualbox-host-modules virtualbox-guest-utils virtualbox-guest-dkms virtualbox-host-dkms --noconfirm
+sudo pacman -S newsboat
 
 ## Terminal Emulator with ZSH
 sudo pacman -S alacritty --noconfirm
@@ -54,6 +55,7 @@ sudo pacman -S pulseaudio --noconfirm
 sudo pacman -S projectm-pulseaudio --noconfirm
 sudo pacman -S qbittorrent --noconfirm
 sudo pacman -S mpd mpc ncmpcpp --noconfirm
+sudo pacman -S soundux --noconfirm
 
 ## Install Suckless software
 git clone https://git.suckless.org/dmenu && cd dmenu && sudo make clean install && cd ..
@@ -78,6 +80,7 @@ sudo pacman -S discord --noconfirm
 sudo pacman -S telegram --noconfirm
 sudo pacman -S nicotine+ --noconfirm
 yay -S telegram-desktop-bin --noconfirm #This still has confirmation. Look into yay noconfirm tags
+sudo pacman -S element-desktop
 
 ## Install the Bible
 git clone https://github.com/lukesmithxyz/kjv.git && cd kjv && sudo make install && cd .. && rm -Rf kjv

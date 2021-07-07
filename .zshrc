@@ -20,6 +20,8 @@ zstyle :compinstall filename '/home/tsar/.zshrc'
 autoload -Uz compinit
 compinit
 
+export PATH=$PATH:/home/dev/check
+
 # End of lines added by compinstall
 #
 # Prompt ZSH

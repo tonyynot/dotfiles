@@ -32,14 +32,14 @@ Plugin 'vim-utils/vim-man'
 Plugin 'mbbill/undotree'
 Plugin 'preservim/nerdtree'
 Plugin 'preservim/nerdcommenter'
-"Plugin 'kyoz/purify', 'rtp'
+Plugin 'kyoz/purify', { 'rtp': 'vim' }
 
 call vundle#end()
 filetype plugin indent on
 
 syntax on
 set background=dark
-colorscheme gruvbox
+colorscheme purify
 
 if executable('rg')
         let g:rg_derive_root='true'

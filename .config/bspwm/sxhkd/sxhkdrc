@@ -54,6 +54,17 @@ super + Escape
 # SUPER + SHIFT KEYS
 #################################################################
 
+# i3 like resizing
+super + shift + Left
+    /bin/sh $HOME/.config/bspwm/resize/shrinkx.sh
+super + shift + Right
+    /bin/sh $HOME/.config/bspwm/resize/expandx.sh
+super + shift + Down
+    /bin/sh $HOME/.config/bspwm/resize/shrinky.sh
+super + shift + Up
+    /bin/sh $HOME/.config/bspwm/resize/expandy.sh
+
+
 #File-Manager
 super + shift + f
 	pcmanfm
@@ -424,19 +435,19 @@ super + {_,shift + }a
 	bspc node @/ --flip {vertical,horizontal}
 
 # Move focused window to other monitor
-super + shift + Left
+super + shift + h
 	bspc node -m next --follow
 
 # Move focused window to other monitor
-super + shift + Right
+super + shift + l
 		bspc node -m next --follow
 
 # Move focused window to other monitor
-super + shift + Up
+super + shift + j
 	bspc node -m next --follow
 
 # Move focused window to other monitor
-super + shift + Down
+super + shift + k
 		bspc node -m next --follow
 
 #################################################################

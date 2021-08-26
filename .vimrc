@@ -39,7 +39,7 @@ filetype plugin indent on
 
 syntax on
 set background=dark
-colorscheme purify
+colorscheme gruvbox
 
 if executable('rg')
         let g:rg_derive_root='true'

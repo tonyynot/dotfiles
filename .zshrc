@@ -71,6 +71,7 @@ alias ds='dotfiles status'
 
 ## Term programs ##
 alias nb='newsboat'
+alias code='vscodium'
 
 ## i3 ##
 alias i3-config='v ~/.config/i3/config'

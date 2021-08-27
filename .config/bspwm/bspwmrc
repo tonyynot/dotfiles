@@ -17,8 +17,8 @@ $HOME/.config/polybar/launch.sh &
 $HOME/.fehbg
 
 ###### DUAL MONITOR ######
-bspc monitor HDMI-1 -d 1 2 3 4
-bspc monitor DVI-D-2 -d  5 6 7 8 9
+bspc monitor DVI-D-2 -d 1 2 3 4 5
+bspc monitor HDMI-1 -d  6 7 8 9 0
 
 ###### SINGLE MONITOR ######
 #bspc monitor -d 1 2 3 4 5 6 7 8 9 10
@@ -61,10 +61,12 @@ bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a TelegramDesktop desktop='^3'
 bspc rule -a discord desktop='^3'
 bspc rule -a Firefox desktop='^2'
-bspc rule -a thunderbird desktop='^2'
+bspc rule -a brave desktop='^6'
+bspc rule -a VSCodium desktop='^7'
+bspc rule -a Thunderbird desktop='^2'
 bspc rule -a Nicotine desktop='^5'
 bspc rule -a Ledger Live desktop='^9'
-bspc rule -a keepassxc desktop='^6'
+bspc rule -a KeePassXC desktop='^4'
 
 bspc rule -a inkscape state=fullscreen
 bspc rule -a Spotify state=fullscreen

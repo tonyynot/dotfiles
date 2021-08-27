@@ -1,11 +1,84 @@
-#################################################################
-# KEYBOARD BINDINGS FOR ANY TWM
-#################################################################
+################################################################################
+#      ___           ___           ___           ___          _____
+#     /  /\         /__/|         /__/\         /__/|        /  /::\ 
+#    /  /:/_       |  |:|         \  \:\       |  |:|       /  /:/\:\ 
+#   /  /:/ /\      |  |:|          \__\:\      |  |:|      /  /:/  \:\  
+#  /  /:/ /::\   __|__|:|      ___ /  /::\   __|  |:|     /__/:/ \__\:|
+# /__/:/ /:/\:\ /__/::::\____ /__/\  /:/\:\ /__/\_|:|____ \  \:\ /  /:/
+# \  \:\/:/~/:/    ~\~~\::::/ \  \:\/:/__\/ \  \:\/:::::/  \  \:\  /:/
+#  \  \::/ /:/      |~~|:|~~   \  \::/       \  \::/~~~~    \  \:\/:/
+#   \__\/ /:/       |  |:|      \  \:\        \  \:\         \  \::/
+#     /__/:/        |  |:|       \  \:\        \  \:\         \__\/  
+#     \__\/         |__|/         \__\/         \__\/
+################################################################################
+
+######################################################################
+#
+# tonyynot's sxhkdrc
+# License: GPLv3
+# Visit https://github.com/tonyynot/dotfiles for more information
+#
+######################################################################
+
+# focus the next/previous window in the current desktop
+super + shift + b
+	bspc node -f {next,prev}.local.!hidden.window
+
+# Pause audio
+super + p
+	mpc toggle
+
+# Changes to next/previous tracks
+super + {comma,period}
+	mpc {prev,next}
+
+# hide window
+super + v
+  bspc node -g hidden
+
+# unhide window
+super + shift + v
+  bspc node {,$(bspc query -N -n .hidden | tail -n1)} -g hidden=off
 
 
-#################################################################
-# SUPER + ... KEYS
-#################################################################
+## make sxhkd reload its configuration files
+super + \
+	pkill -USR1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
+
+# quit/restart bspwm
+super + ctrl + {q,r}
+	bspc {quit,wm -r}
+
+#Toggle fullscreen of window
+super + shift + f
+	bspc node --state \~fullscreen
+
+
+# close and kill
+super + {_,shift + }q
+    bspc node -{c,k}
+
+## focus the next node in the current desktop
+alt + Tab
+	bspc node -f next.local
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9}
+	bspc {desktop -f,node -d} '^{1-9}'
+
+# expand a window by moving one of its side outward
+super + shift + Left
+    /bin/sh $HOME/.config/bspwm/resize/shrinkx.sh
+super + shift + Right
+    /bin/sh $HOME/.config/bspwm/resize/expandx.sh
+super + shift + Down
+    /bin/sh $HOME/.config/bspwm/resize/shrinky.sh
+super + shift + Up
+    /bin/sh $HOME/.config/bspwm/resize/expandy.sh
+
+# rotate current node 90 degrees
+super + g
+	bspc node @focused:/ -R 90
 
 #menu
 super + d
@@ -25,7 +98,7 @@ super + c
 
 #Htop
 super + h
-    alacritty 'htop task manager' -e htop
+    alacritty:htop
 
 #arcolinux-logout
 super + x
@@ -54,18 +127,10 @@ super + Escape
 # SUPER + SHIFT KEYS
 #################################################################
 
-# i3 like resizing
-super + shift + Left
-    /bin/sh $HOME/.config/bspwm/resize/shrinkx.sh
-super + shift + Right
-    /bin/sh $HOME/.config/bspwm/resize/expandx.sh
-super + shift + Down
-    /bin/sh $HOME/.config/bspwm/resize/shrinky.sh
-super + shift + Up
-    /bin/sh $HOME/.config/bspwm/resize/expandy.sh
-
 
 #File-Manager
+
+
 super + shift + f
 	pcmanfm
 
@@ -361,9 +426,6 @@ ctrl + alt + o
 # SUPER + KEYS
 #################################################################
 
-#Toggle fullscreen of window
-super + shift + f
-	bspc node --state \~fullscreen
 
 # Toggle pseudo tiling of window
 super + p

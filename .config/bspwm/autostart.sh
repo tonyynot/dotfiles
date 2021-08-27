@@ -29,7 +29,6 @@ dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
 xsetroot -cursor_name left_ptr &
 run sxhkd -c ~/.config/bspwm/sxhkd/sxhkdrc &
 
-conky -c $HOME/.config/bspwm/system-overview &
 run variety &
 run nm-applet &
 run pamac-tray &
@@ -40,6 +39,12 @@ picom --config $HOME/.config/bspwm/picom.conf &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 run volumeicon &
+run brave &
+run thunderbird &
+run Nicotine &
+run codium &
+run discord &
+run telegram-desktop &
 #nitrogen --restore &
 #run caffeine &
 #run vivaldi-stable &

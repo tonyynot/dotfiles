@@ -42,7 +42,7 @@ super + shift + v
 
 
 ## make sxhkd reload its configuration files
-super + \
+super + home
 	pkill -USR1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
 
 # quit/restart bspwm
@@ -96,13 +96,13 @@ super + w
 super + c
     conky-toggle
 
-#Htop
-super + h
-    alacritty:htop
-
 #arcolinux-logout
 super + x
     arcolinux-logout
+
+#ranger
+super + r
+    alacritty -e ranger
 
 #Pavucontrol
 super + v
@@ -110,14 +110,15 @@ super + v
 
 #ncmpcpp
 super + n
-    ncmpcpp
+    alacritty -e ncmpcpp
 
 #alacritty
 super + Return
     alacritty
 
-super + t
-    alacritty
+#htop
+super + h
+    alacritty -e htop
 
 #Xkill
 super + Escape
@@ -135,7 +136,7 @@ super + shift + f
 	pcmanfm
 
 super + r
-    ranger
+    launch
 
 #Keyboard dependent
 #File-Manager

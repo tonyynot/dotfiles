@@ -9,17 +9,13 @@ echo '༼ つ ͡° ͜ʖ ͡° ༽つ System update complete. Now installing your 
 
 ## Developer tools
 sudo pacman -S --needed git base-devel --noconfirm
+yay -S git-credential-manager-core-bin
 sudo pacman -S vim --noconfirm
 sudo git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 sudo vim +PluginInstall +qall
 
 ## Fonts
-sudo pacman -S noto-fonts --noconfirm
-sudo pacman -S ttf-hack --noconfirm
-sudo pacman -S ttf-fira-code --noconfirm
-sudo pacman -S noto-fonts-emoji --noconfirm
-sudo pacman -S ttf-font-awesome --noconfirm
-sudo pacman -S papirus-icon-theme --noconfirm
+sudo pacman -S noto-fonts ttf-hack ttf-fira-code noto-fonts-emoji ttf-font-awesome papirus-icon-theme 
 yay -S cryptocoins-git
 
 ## System tools
@@ -34,23 +30,26 @@ sudo pacman -S imagemagick --noconfirm
 ## Productivity
 sudo pacman -S libreoffice-still --noconfirm
 sudo pacman -S thunderbird --noconfirm
-sudo pacman -S virtualbox linux59-virtualbox-guest-modules linux59-virtualbox-host-modules virtualbox-guest-utils virtualbox-guest-dkms virtualbox-host-dkms --noconfirm
 sudo pacman -S newsboat
-yay -S vscodium-bin
 
 ## Terminal Emulator with ZSH
 sudo pacman -S alacritty --noconfirm
 sudo pacman -S zsh zsh-completions --noconfirm
 
-## yay package installer (Arch User Repo)
+## yay and pikaur package managers (Arch User Repo)
 git blone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm && cd .. && rm -Rf yay
+sudo pacman -S --needed base-devel git && git clone https://aur.archlinux.org/pikaur.git && cd pikaur && makepkg -fsri && cd .. && rm -Rf pikaur
+
 
 ## Themeing
-sudo yay -S themix-full-git --no-confirm  
+sudo yay -S themix-gui-git --no-confirm  
 sudo pacman -S feh --noconfirm
 yay -S betterlockscreen && betterlockscreen -u ~/Pictures/Wallpaper
 sudo pacman -S rofi --noconfirm
 sudo pacman -S polybar
+yay -S gtk-engine-murrine
+pikaur -S themix-full-git
+sudo pacman -S dunst
 
 ## Browser install
 yay -S brave-bin
@@ -63,8 +62,7 @@ sudo pacman -S projectm-pulseaudio --noconfirm
 sudo pacman -S qbittorrent --noconfirm
 sudo pacman -S mpd mpc ncmpcpp --noconfirm
 yay -S soundux
-sudo pacman -S youtube-dl --noconfirm
-sudo pacman -S youtube-dl-cli-git --noconfirm
+yay -S youtube-dl-cli-git --noconfirm
 ## Install Suckless software
 #git clone https://git.suckless.org/dmenu && cd dmenu && sudo make clean install && cd ..
 
@@ -77,7 +75,6 @@ sudo pacman -S pcmanfm --noconfirm
 
 ## Security / Privacy
 sudo pacman -S keepassxc --noconfirm
-sudo pacman -S nextcloud --noconfirm
 sudo pacman -S nextcloud-client --noconfirm
 sudo pacman -S openvpn --noconfirm
 yay -S ledger-live
@@ -92,6 +89,10 @@ sudo pacman -S element-desktop
 
 ## Install the Bible
 git clone https://github.com/lukesmithxyz/kjv.git && cd kjv && sudo make install && cd .. && rm -Rf kjv
+
+#bspwm
+sudo pacman -S bspwm
+sudo pacman -S sxhkd
 
 ## i3WM Config
 ## *Imports custom config files from dotfiles directory

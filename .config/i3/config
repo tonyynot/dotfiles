@@ -14,7 +14,10 @@ font pango: Hack 15
 #   / _ \| | | | __/ _ \  \___ \| __/ _` | '__| __|
 #  / ___ \ |_| | || (_) |  ___) | || (_| | |  | |_ 
 # /_/   \_\__,_|\__\___/  |____/ \__\__,_|_|   \__|
+
 #
+# Launch polybar
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # picom (window transparency)
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 # autotiling
@@ -287,10 +290,10 @@ font pango:Hack 10
 
 #start of bar section
 bar {
-    position top
-    status_command i3blocks
-    colors {
-        # bar background color
+   position top
+   status_command i3blocks
+   colors {
+       # bar background color
         background $bg
         # text color used for blocks that do not have a color specified.
         statusline $yellow
